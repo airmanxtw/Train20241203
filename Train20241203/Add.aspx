@@ -8,7 +8,7 @@
        <uc1:ucComputer ID="ucComputer1" runat="server" OnCompute="ucComputer1_Compute" />
         <p>
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Label" ></asp:Label>
     </p>
    
 </asp:Content>
