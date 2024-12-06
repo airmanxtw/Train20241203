@@ -68,7 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add.aspx" />
+    <Content Include="App_Themes\Dark\bootstrap-grid.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap-grid.rtl.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap-reboot.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap-reboot.rtl.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap-utilities.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap-utilities.rtl.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap.min.css" />
+    <Content Include="App_Themes\Dark\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="JavaScript\bootstrap.bundle.min.js" />
+    <Content Include="JavaScript\bootstrap.esm.min.js" />
+    <Content Include="JavaScript\bootstrap.min.js" />
+    <Content Include="JavaScript\jquery-3.7.1.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Sub.aspx" />
@@ -134,6 +146,18 @@
   <ItemGroup>
     <Content Include="App_Themes\Default\Skin1.skin" />
     <Content Include="App_Themes\Dark\Skin1.skin" />
+    <Content Include="App_Themes\Dark\bootstrap-grid.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap-reboot.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap-utilities.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap.min.css.map" />
+    <Content Include="App_Themes\Dark\bootstrap.rtl.min.css.map" />
+    <Content Include="JavaScript\bootstrap.bundle.min.js.map" />
+    <Content Include="JavaScript\bootstrap.esm.min.js.map" />
+    <Content Include="JavaScript\bootstrap.min.js.map" />
+    <Content Include="JavaScript\jquery-3.7.1.min.map" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="README.md" />

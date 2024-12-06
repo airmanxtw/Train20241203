@@ -15,7 +15,7 @@ namespace Train20241203.UC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Button1.Attributes.Add("style", "background-color: #4CAF50; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%;");
         }
 
         private Func<float, float, float> Formula { get; set; } = null;

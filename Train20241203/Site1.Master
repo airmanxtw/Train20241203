@@ -9,6 +9,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
         
     </asp:ContentPlaceHolder>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div>
@@ -16,6 +17,12 @@
     </div>
     
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/JavaScript/jquery-3.7.1.min.js" />
+                <asp:ScriptReference Path="~/JavaScript/bootstrap.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
         <div>
     <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#284E98" StaticSubMenuIndent="10px" Orientation="Horizontal">
         <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
@@ -32,7 +39,7 @@
         <StaticSelectedStyle BackColor="#507CD1" />
     </asp:Menu>
 </div>
-        <div>
+        <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
