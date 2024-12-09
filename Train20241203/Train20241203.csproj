@@ -97,8 +97,6 @@
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="Api\Provider\MySiteMapProvider.cs" />
-    <Compile Include="Api\Roles\RoleAdmin.cs" />
-    <Compile Include="Api\Roles\RoleBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -173,6 +171,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api\Roles\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
