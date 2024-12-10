@@ -12,11 +12,13 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div>
-     <h1>計算機程式</h1>
-    </div>
     
     <form id="form1" runat="server">
+    <div>
+     <h1>計算機程式-<asp:Label ID="useridLabel" runat="server"></asp:Label>
+        </h1>
+    </div>
+    
         <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Scripts>
                 <asp:ScriptReference Path="~/JavaScript/jquery-3.7.1.min.js" />
@@ -24,21 +26,17 @@
             </Scripts>
         </asp:ScriptManager>
         <div>
-    <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#284E98" StaticSubMenuIndent="10px" Orientation="Horizontal">
-        <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
-        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-        <DynamicMenuStyle BackColor="#B5C7DE" />
-        <DynamicSelectedStyle BackColor="#507CD1" />
-        <Items>
-            <asp:MenuItem NavigateUrl="~/Add.aspx" Text="add" Value="add"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/Sub.aspx" Text="sub" Value="sub"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/Logout.aspx" Text="登出" Value="登出"></asp:MenuItem>
-        </Items>
-        <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
-        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-        <StaticSelectedStyle BackColor="#507CD1" />
-    </asp:Menu>
     <div>
+        <asp:Menu ID="Menu2" runat="server" BackColor="#B5C7DE" DataSourceID="SiteMapDataSource1" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#284E98" Orientation="Horizontal" StaticSubMenuIndent="10px">
+            <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#B5C7DE" />
+            <DynamicSelectedStyle BackColor="#507CD1" />
+            <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#507CD1" />
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" SiteMapProvider="MySiteMapProvider" />
     </div>
 </div>
         <div class="container">

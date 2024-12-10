@@ -11,7 +11,12 @@ namespace Train20241203
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                //useridLabel.Text = HttpContext.Current.User.Identity.Name;
+                useridLabel.Text = HttpContext.Current.Session["UserName"]!=null ? HttpContext.Current.Session["UserName"].ToString() : HttpContext.Current.User.Identity.Name;
+                var b= HttpContext.Current.User.IsInRole("admin");
+            }
         }
     }
 }

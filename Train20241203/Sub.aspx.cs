@@ -12,7 +12,7 @@ namespace Train20241203
         protected void Page_Load(object sender, EventArgs e)
         {
             ucComputer1.SetFormulas((float a, float b) => a - b);
-
+            
         }
 
         protected void ucComputer1_Compute(float reulst)

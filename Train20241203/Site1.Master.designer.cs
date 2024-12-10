@@ -33,6 +33,15 @@ namespace Train20241203
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// useridLabel 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label useridLabel;
+
+        /// <summary>
         /// ScriptManager1 控制項。
         /// </summary>
         /// <remarks>
@@ -42,13 +51,22 @@ namespace Train20241203
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// Menu1 控制項。
+        /// Menu2 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.Menu Menu2;
+
+        /// <summary>
+        /// SiteMapDataSource1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
 
         /// <summary>
         /// ContentPlaceHolder1 控制項。

@@ -96,9 +96,16 @@
     <Compile Include="Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Api\Provider\MyRoleProvider.cs" />
     <Compile Include="Api\Provider\MySiteMapProvider.cs" />
+    <Compile Include="Api\Roles\RoleAdmin.cs" />
+    <Compile Include="Api\Roles\RoleBase.cs" />
+    <Compile Include="Api\Roles\RoleSUPERADMIN.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler1.ashx.cs">
+      <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -159,6 +166,7 @@
     <Content Include="JavaScript\bootstrap.esm.min.js.map" />
     <Content Include="JavaScript\bootstrap.min.js.map" />
     <Content Include="JavaScript\jquery-3.7.1.min.map" />
+    <Content Include="Handler1.ashx" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="README.md" />
@@ -171,7 +179,6 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\Roles\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
