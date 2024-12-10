@@ -14,7 +14,10 @@ namespace Train20241203
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 //useridLabel.Text = HttpContext.Current.User.Identity.Name;
-                useridLabel.Text = HttpContext.Current.Session["UserName"]!=null ? HttpContext.Current.Session["UserName"].ToString() : HttpContext.Current.User.Identity.Name;
+                //useridLabel.Text = HttpContext.Current.Session["UserName"]!=null ? HttpContext.Current.Session["UserName"].ToString() : HttpContext.Current.User.Identity.Name;
+
+                useridLabel.Text = Api.User.GetUserInfo(HttpContext.Current.User.Identity.Name).UserName;
+
                 var b= HttpContext.Current.User.IsInRole("admin");
             }
         }
