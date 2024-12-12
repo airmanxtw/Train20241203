@@ -50,6 +50,50 @@
                     </tr>
                 </table>
             </LayoutTemplate>
-        </asp:Login>
+        </asp:Login>       
     </p>
+     <div id="testdiv">hello</div>
+
+
+     <button id="testBtn">選擇</button>
+     <span>hello herre</span>
+
+     <button id="testBtn2">選擇2</button>
+    <%-- <div id="dialog-form" title="Create new user">
+        <p class="validateTips">All form fields are required.</p>
+        <fieldset>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+ 
+          <!-- Allow form submission with keyboard without duplicating the dialog button -->
+          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>  
+    </div>--%>
+    
+   
+    
+
+
+     
+    <script>
+        $(document).ready(function () {
+            $("#testBtn").SelectItemDialog({
+                title: "大金系統2",
+                items: [{ id: 123, text: '顏大鈞' }, { id: 124, text: '顏小鈞' }, { id: 125, text: '王大頭' }],
+                selectLimit: 2,
+                searchKeyCallBack: function (key) {
+                    $("#testBtn").SelectItemDialog("setItems", [{ id: 123, text: '顏大鈞' }]);                    
+                },
+                confirmCallBack: function (data) {
+                    debugger;
+                    alert(data);
+                }
+            });
+           
+        });      
+    </script>
 </asp:Content>

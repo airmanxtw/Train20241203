@@ -3,5 +3,6 @@
   <siteMapNode url="*" title="*" roles="*"  description="root">
     <siteMapNode url="add.aspx" title="Add"  description="Add" roles="ADMIN,USER" />
     <siteMapNode url="sub.aspx" title="Sub"  description="Sub" roles="SUPERADMIN" />
+    <siteMapNode url="JSDEMO.aspx" title="JSDEMO"  description="JSDEMO" roles="*" />
   </siteMapNode>
 </siteMap>
