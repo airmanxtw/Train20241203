@@ -96,7 +96,7 @@
                     }));       
                 },
                 confirmCallBack: function (data) {                    
-                    alert(data);
+                    alert(data);                  
                     $("body").SelectItemDialog("closeDialog");
                 },
                 closeCallBack:function(){

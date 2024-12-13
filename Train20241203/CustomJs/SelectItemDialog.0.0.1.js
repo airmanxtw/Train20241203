@@ -52,10 +52,10 @@
                         width: this.options.width,
                         modal: true,
                         buttons: {
-                            "確定": function () {
+                            "確定": function () {                             
                                 THIS.options.confirmCallBack(
-                                    THIS.selectItemDiv.find(":checked").map(function (i, item) {
-                                        return $.grep(THIS.options.items, function (t) { return t[THIS.options.itemValue] == $(item).data("id") })
+                                    $.map(THIS.selectItemDiv.find(":checked"), function (item, i) {                                   
+                                        return $.grep(THIS.options.items, function (t) { return t[THIS.options.itemValue] == $(item).data("id") })[0]
                                     }));                                
                             },
                             "取消": function () {
