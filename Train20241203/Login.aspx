@@ -5,6 +5,7 @@
     <p>
         <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
             <LayoutTemplate>
+              
                 <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                     <tr>
                         <td>
@@ -81,18 +82,32 @@
      
     <script>
         $(document).ready(function () {
-            $("#testBtn").SelectItemDialog({
-                title: "大金系統2",
-                items: [{ id: 123, text: '顏大鈞' }, { id: 124, text: '顏小鈞' }, { id: 125, text: '王大頭' }],
+            //#testBtn
+            var data = [{ id: 123, text: '顏大鈞' }, { id: 124, text: '顏小鈞' }, { id: 125, text: '王大頭' }]
+
+            $("body").SelectItemDialog({
+                title: "大金系統",
+                headers: [{ key: 'id', title: '編號', width: '70px', align: 'center' }, { key: 'text', title: '名稱', align: 'left' }],
+                items: $.extend([],data),
                 selectLimit: 2,
-                searchKeyCallBack: function (key) {
-                    $("#testBtn").SelectItemDialog("setItems", [{ id: 123, text: '顏大鈞' }]);                    
+                searchKeyCallBack: function (key) {                    
+                    $("body").SelectItemDialog("setItems", $.grep(data, function (d) {                        
+                        return d.text.indexOf(key) >= 0
+                    }));       
                 },
-                confirmCallBack: function (data) {
-                    debugger;
+                confirmCallBack: function (data) {                    
                     alert(data);
+                    $("body").SelectItemDialog("closeDialog");
+                },
+                closeCallBack:function(){
+                    $("body").SelectItemDialog("closeDialog");
                 }
             });
+
+            $("#testBtn").click(function (event) {
+                $("body").SelectItemDialog("openDialog");
+                event.preventDefault();
+            })
            
         });      
     </script>

@@ -124,7 +124,7 @@
 
             this.selectItemDiv.empty().append(this.table);
         },
-        openDialog: function () {
+        openDialog: function () {            
             this.dialogDiv.dialog("open");
         },
         closeDialog: function () {            
@@ -145,7 +145,8 @@
                 THAT.options.searchKeyCallBack(event.target.value);
             }, this.options.delay);
         },
-        setItems: function (items) {            
+        setItems: function (items) {
+            
             this.options.items = $.extend([], items);
             this._refresh();
         }
