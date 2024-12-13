@@ -14,7 +14,7 @@
             delay: 800,
             searchKeyCallBack: null,
             confirmCallBack: null,
-            closeCallBack:null
+            closeCallBack: null
         },
         _create: function () {
             var THIS = this;
@@ -52,18 +52,18 @@
                         width: this.options.width,
                         modal: true,
                         buttons: {
-                            "確定": function () {                             
+                            "確定": function () {
                                 THIS.options.confirmCallBack(
-                                    $.map(THIS.selectItemDiv.find(":checked"), function (item, i) {                                   
+                                    $.map(THIS.selectItemDiv.find(":checked"), function (item, i) {
                                         return $.grep(THIS.options.items, function (t) { return t[THIS.options.itemValue] == $(item).data("id") })[0]
-                                    }));                                
+                                    }));
                             },
                             "取消": function () {
-                                THIS.options.closeCallBack();                                
+                                THIS.options.closeCallBack();
                             }
                         }
                     });
-          
+
             this._refresh();
 
         },
@@ -115,10 +115,14 @@
                     $.map(THAT.options.headers, function (header) {
                         return $("<td>", {
                             text: item[header.key],
-                            css: { "text-align": header.align }
+                            css: { "text-align": header.align, cursor: "pointer" }
                         });
                     })
                 ).appendTo(THAT.tbody);
+
+                THAT._on(THAT.tbodyTr, {
+                    click:'tbodyTrClickEvent'
+                });
 
             });
 
@@ -127,13 +131,27 @@
         openDialog: function () {
             this.dialogDiv.dialog("open");
         },
-        closeDialog: function () {            
+        closeDialog: function () {
             this.dialogDiv.dialog("close");
         },
         clickItemEvent: function (event) {
-            var _selected = this.selectItemDiv.find(":checked").length;
-            if (this.options.selectLimit < 1 || (this.options.selectLimit > 1 && _selected > this.options.selectLimit))
-                event.preventDefault();
+            var _selected = this.selectItemDiv.find(":checked").length;     
+            
+            if (this.options.selectLimit < 1 || (this.options.selectLimit > 1 && _selected > this.options.selectLimit))              
+                $(event.target).prop("checked", false);            
+            else {
+                if (this.options.selectLimit == 1) 
+                    $(event.target).parent().parent().siblings().removeClass("ui-state-active");                
+                if ($(event.target).prop("checked"))
+                    $(event.target).parent().parent().addClass("ui-state-active");
+                else
+                    $(event.target).parent().parent().removeClass("ui-state-active");
+            }
+            event.stopPropagation();
+            
+        },
+        tbodyTrClickEvent: function (event) {
+            $(event.target).parent().find("input").trigger("click"); 
         },
         _timeID20241211: null,
         inputEvent: function (event) {            
