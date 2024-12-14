@@ -95,8 +95,8 @@
                         return d.text.indexOf(key) >= 0
                     }));       
                 },
-                confirmCallBack: function (data) {                    
-                    alert(data);                  
+                confirmCallBack: function (data) {                                        
+                    var t = $("body").SelectItemDialog("joinItem", { items: data, key: 'text', separator: "," });                    
                     $("body").SelectItemDialog("closeDialog");
                 },
                 closeCallBack:function(){

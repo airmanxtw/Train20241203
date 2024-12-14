@@ -121,7 +121,7 @@
                 ).appendTo(THAT.tbody);
 
                 THAT._on(THAT.tbodyTr, {
-                    click:'tbodyTrClickEvent'
+                    click: 'tbodyTrClickEvent'
                 });
 
             });
@@ -135,26 +135,26 @@
             this.dialogDiv.dialog("close");
         },
         clickItemEvent: function (event) {
-            var _selected = this.selectItemDiv.find(":checked").length;     
-            
-            if (this.options.selectLimit < 1 || (this.options.selectLimit > 1 && _selected > this.options.selectLimit))              
-                $(event.target).prop("checked", false);            
+            var _selected = this.selectItemDiv.find(":checked").length;
+
+            if (this.options.selectLimit < 1 || (this.options.selectLimit > 1 && _selected > this.options.selectLimit))
+                $(event.target).prop("checked", false);
             else {
-                if (this.options.selectLimit == 1) 
-                    $(event.target).parent().parent().siblings().removeClass("ui-state-active");                
+                if (this.options.selectLimit == 1)
+                    $(event.target).parent().parent().siblings().removeClass("ui-state-active");
                 if ($(event.target).prop("checked"))
                     $(event.target).parent().parent().addClass("ui-state-active");
                 else
                     $(event.target).parent().parent().removeClass("ui-state-active");
             }
             event.stopPropagation();
-            
+
         },
         tbodyTrClickEvent: function (event) {
-            $(event.target).parent().find("input").trigger("click"); 
+            $(event.target).parent().find("input").trigger("click");
         },
         _timeID20241211: null,
-        inputEvent: function (event) {            
+        inputEvent: function (event) {
             var THAT = this;
             if (this._timeID20241211 != null)
                 clearTimeout(this._timeID20241211);
@@ -163,9 +163,18 @@
                 THAT.options.searchKeyCallBack(event.target.value);
             }, this.options.delay);
         },
-        setItems: function (items) {            
+        setItems: function (items) {
             this.options.items = $.extend([], items);
             this._refresh();
+        },
+        joinItem: function (conf) {
+            var rs = "";
+            $.each(conf.items, function (i, item) {
+                rs += item[conf.key];                
+                if (i < conf.items.length - 1)
+                    rs += conf.separator;
+            });            
+            return rs;
         }
     });
 })(jQuery);
