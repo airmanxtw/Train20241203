@@ -72,7 +72,22 @@ namespace Train20241203.Api
 
 
 
-            var oddNums9 = from item in db.Stud select item.SchoolClass;
+            var oddNums9 = from s in db.SchoolClass 
+                           where s.Stud.Any(n=>n.studNo=="S1234")
+                           select s;
+
+            var oddNums10 = from item in oddNums9 where item.classNo == "C001" select item;
+
+
+
+            var stud1 = from s in db.Stud where s.studNo == "S1234"
+                        select s;
+
+            stud1.First().studName = "John";
+
+           
+
+
 
 
 
