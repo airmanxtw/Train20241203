@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -117,12 +118,21 @@
     <Compile Include="Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Api\DemoLinq.cs" />
+    <Compile Include="Api\Extensions\MyExtesions.cs" />
+    <Compile Include="Api\PartialCounSubjectRecord.cs" />
+    <Compile Include="Api\Provider\MyMemberShipProvider.cs" />
     <Compile Include="Api\Provider\MyRoleProvider.cs" />
     <Compile Include="Api\Provider\MySiteMapProvider.cs" />
     <Compile Include="Api\Roles\RoleAdmin.cs" />
     <Compile Include="Api\Roles\RoleBase.cs" />
     <Compile Include="Api\Roles\RoleSUPERADMIN.cs" />
     <Compile Include="Api\User.cs" />
+    <Compile Include="DB\DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +207,14 @@
     <Content Include="JavaScript\bootstrap.min.js.map" />
     <Content Include="JavaScript\jquery-3.7.1.min.map" />
     <Content Include="Handler1.ashx" />
+    <Content Include="DB\DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="DB\DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="README.md" />
@@ -210,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

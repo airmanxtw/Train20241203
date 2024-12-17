@@ -12,14 +12,24 @@ namespace Train20241203
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Api.DemoLinq demoLinq = new Api.DemoLinq();
+            demoLinq.Demo();
+
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            var isSuper = FormsAuthentication.Authenticate(Login1.UserName, Login1.Password);
-            e.Authenticated = (Login1.UserName == "admin" && Login1.Password == "admin") || isSuper;
-    
+
+            #pragma warning disable CS0618 // 類型或成員已經過時
+            e.Authenticated = Membership.ValidateUser(Login1.UserName, Login1.Password) || 
+                              FormsAuthentication.Authenticate(Login1.UserName, Login1.Password);
+
+            
+
+            //var isSuper = FormsAuthentication.Authenticate(Login1.UserName, Login1.Password);
+            //e.Authenticated = (Login1.UserName == "admin" && Login1.Password == "admin") || isSuper;
+
         }
     }
 }
