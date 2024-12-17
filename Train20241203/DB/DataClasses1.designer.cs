@@ -30,15 +30,18 @@ namespace Train20241203.DB
 		
     #region 擴充性方法定義
     partial void OnCreated();
-    partial void InsertStud(Stud instance);
-    partial void UpdateStud(Stud instance);
-    partial void DeleteStud(Stud instance);
     partial void InsertCounMaster(CounMaster instance);
     partial void UpdateCounMaster(CounMaster instance);
     partial void DeleteCounMaster(CounMaster instance);
     partial void InsertCounSubject(CounSubject instance);
     partial void UpdateCounSubject(CounSubject instance);
     partial void DeleteCounSubject(CounSubject instance);
+    partial void InsertStud(Stud instance);
+    partial void UpdateStud(Stud instance);
+    partial void DeleteStud(Stud instance);
+    partial void InsertSchoolClass(SchoolClass instance);
+    partial void UpdateSchoolClass(SchoolClass instance);
+    partial void DeleteSchoolClass(SchoolClass instance);
     #endregion
 		
 		public DataClasses1DataContext(string connection) : 
@@ -65,14 +68,6 @@ namespace Train20241203.DB
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Stud> Stud
-		{
-			get
-			{
-				return this.GetTable<Stud>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CounMaster> CounMaster
 		{
 			get
@@ -96,138 +91,20 @@ namespace Train20241203.DB
 				return this.GetTable<CounSubjectRecord>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Stud")]
-	public partial class Stud : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _studNo;
-		
-		private string _studName;
-		
-		private int _score;
-		
-		private System.DateTime _createDate;
-		
-    #region 擴充性方法定義
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnstudNoChanging(string value);
-    partial void OnstudNoChanged();
-    partial void OnstudNameChanging(string value);
-    partial void OnstudNameChanged();
-    partial void OnscoreChanging(int value);
-    partial void OnscoreChanged();
-    partial void OncreateDateChanging(System.DateTime value);
-    partial void OncreateDateChanged();
-    #endregion
-		
-		public Stud()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studNo", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string studNo
+		public System.Data.Linq.Table<Stud> Stud
 		{
 			get
 			{
-				return this._studNo;
-			}
-			set
-			{
-				if ((this._studNo != value))
-				{
-					this.OnstudNoChanging(value);
-					this.SendPropertyChanging();
-					this._studNo = value;
-					this.SendPropertyChanged("studNo");
-					this.OnstudNoChanged();
-				}
+				return this.GetTable<Stud>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string studName
+		public System.Data.Linq.Table<SchoolClass> SchoolClass
 		{
 			get
 			{
-				return this._studName;
-			}
-			set
-			{
-				if ((this._studName != value))
-				{
-					this.OnstudNameChanging(value);
-					this.SendPropertyChanging();
-					this._studName = value;
-					this.SendPropertyChanged("studName");
-					this.OnstudNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score", DbType="Int NOT NULL")]
-		public int score
-		{
-			get
-			{
-				return this._score;
-			}
-			set
-			{
-				if ((this._score != value))
-				{
-					this.OnscoreChanging(value);
-					this.SendPropertyChanging();
-					this._score = value;
-					this.SendPropertyChanged("score");
-					this.OnscoreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createDate", DbType="DateTime NOT NULL")]
-		public System.DateTime createDate
-		{
-			get
-			{
-				return this._createDate;
-			}
-			set
-			{
-				if ((this._createDate != value))
-				{
-					this.OncreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._createDate = value;
-					this.SendPropertyChanged("createDate");
-					this.OncreateDateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<SchoolClass>();
 			}
 		}
 	}
@@ -872,6 +749,319 @@ namespace Train20241203.DB
 					this._CSRValue = value;
 				}
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Stud")]
+	public partial class Stud : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _studNo;
+		
+		private string _studName;
+		
+		private int _score;
+		
+		private System.DateTime _createDate;
+		
+		private string _classNo;
+		
+		private EntityRef<SchoolClass> _SchoolClass;
+		
+    #region 擴充性方法定義
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnstudNoChanging(string value);
+    partial void OnstudNoChanged();
+    partial void OnstudNameChanging(string value);
+    partial void OnstudNameChanged();
+    partial void OnscoreChanging(int value);
+    partial void OnscoreChanged();
+    partial void OncreateDateChanging(System.DateTime value);
+    partial void OncreateDateChanged();
+    partial void OnclassNoChanging(string value);
+    partial void OnclassNoChanged();
+    #endregion
+		
+		public Stud()
+		{
+			this._SchoolClass = default(EntityRef<SchoolClass>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studNo", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string studNo
+		{
+			get
+			{
+				return this._studNo;
+			}
+			set
+			{
+				if ((this._studNo != value))
+				{
+					this.OnstudNoChanging(value);
+					this.SendPropertyChanging();
+					this._studNo = value;
+					this.SendPropertyChanged("studNo");
+					this.OnstudNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string studName
+		{
+			get
+			{
+				return this._studName;
+			}
+			set
+			{
+				if ((this._studName != value))
+				{
+					this.OnstudNameChanging(value);
+					this.SendPropertyChanging();
+					this._studName = value;
+					this.SendPropertyChanged("studName");
+					this.OnstudNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score", DbType="Int NOT NULL")]
+		public int score
+		{
+			get
+			{
+				return this._score;
+			}
+			set
+			{
+				if ((this._score != value))
+				{
+					this.OnscoreChanging(value);
+					this.SendPropertyChanging();
+					this._score = value;
+					this.SendPropertyChanged("score");
+					this.OnscoreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createDate", DbType="DateTime NOT NULL")]
+		public System.DateTime createDate
+		{
+			get
+			{
+				return this._createDate;
+			}
+			set
+			{
+				if ((this._createDate != value))
+				{
+					this.OncreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._createDate = value;
+					this.SendPropertyChanged("createDate");
+					this.OncreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_classNo", DbType="VarChar(4)")]
+		public string classNo
+		{
+			get
+			{
+				return this._classNo;
+			}
+			set
+			{
+				if ((this._classNo != value))
+				{
+					if (this._SchoolClass.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnclassNoChanging(value);
+					this.SendPropertyChanging();
+					this._classNo = value;
+					this.SendPropertyChanged("classNo");
+					this.OnclassNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SchoolClass_Stud", Storage="_SchoolClass", ThisKey="classNo", OtherKey="classNo", IsForeignKey=true)]
+		public SchoolClass SchoolClass
+		{
+			get
+			{
+				return this._SchoolClass.Entity;
+			}
+			set
+			{
+				SchoolClass previousValue = this._SchoolClass.Entity;
+				if (((previousValue != value) 
+							|| (this._SchoolClass.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SchoolClass.Entity = null;
+						previousValue.Stud.Remove(this);
+					}
+					this._SchoolClass.Entity = value;
+					if ((value != null))
+					{
+						value.Stud.Add(this);
+						this._classNo = value.classNo;
+					}
+					else
+					{
+						this._classNo = default(string);
+					}
+					this.SendPropertyChanged("SchoolClass");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SchoolClass")]
+	public partial class SchoolClass : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _classNo;
+		
+		private string _className;
+		
+		private EntitySet<Stud> _Stud;
+		
+    #region 擴充性方法定義
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnclassNoChanging(string value);
+    partial void OnclassNoChanged();
+    partial void OnclassNameChanging(string value);
+    partial void OnclassNameChanged();
+    #endregion
+		
+		public SchoolClass()
+		{
+			this._Stud = new EntitySet<Stud>(new Action<Stud>(this.attach_Stud), new Action<Stud>(this.detach_Stud));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_classNo", DbType="VarChar(4) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string classNo
+		{
+			get
+			{
+				return this._classNo;
+			}
+			set
+			{
+				if ((this._classNo != value))
+				{
+					this.OnclassNoChanging(value);
+					this.SendPropertyChanging();
+					this._classNo = value;
+					this.SendPropertyChanged("classNo");
+					this.OnclassNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_className", DbType="NChar(10)")]
+		public string className
+		{
+			get
+			{
+				return this._className;
+			}
+			set
+			{
+				if ((this._className != value))
+				{
+					this.OnclassNameChanging(value);
+					this.SendPropertyChanging();
+					this._className = value;
+					this.SendPropertyChanged("className");
+					this.OnclassNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SchoolClass_Stud", Storage="_Stud", ThisKey="classNo", OtherKey="classNo")]
+		public EntitySet<Stud> Stud
+		{
+			get
+			{
+				return this._Stud;
+			}
+			set
+			{
+				this._Stud.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Stud(Stud entity)
+		{
+			this.SendPropertyChanging();
+			entity.SchoolClass = this;
+		}
+		
+		private void detach_Stud(Stud entity)
+		{
+			this.SendPropertyChanging();
+			entity.SchoolClass = null;
 		}
 	}
 }

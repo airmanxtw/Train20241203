@@ -5,15 +5,19 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Train20241203.Api;
 
 namespace Train20241203
 {
     public partial class Login : System.Web.UI.Page
     {
+        public IFun2 fun2 { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Api.DemoLinq demoLinq = new Api.DemoLinq();
-            demoLinq.Demo();
+            //Api.DemoLinq demoLinq = new Api.DemoLinq();
+            //demoLinq.Demo();
+            var name = fun2.GetLength();
+
 
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }

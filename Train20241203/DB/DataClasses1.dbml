@@ -1,12 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TestDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Table Name="dbo.Stud" Member="Stud">
-    <Type Name="Stud">
-      <Column Name="studNo" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="studName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="score" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.CounMaster" Member="CounMaster">
     <Type Name="CounMaster">
       <Column Name="CMID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -41,6 +33,23 @@
       <Column Name="CMID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CSRValue" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stud" Member="Stud">
+    <Type Name="Stud">
+      <Column Name="studNo" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="studName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="score" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="classNo" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Association Name="SchoolClass_Stud" Member="SchoolClass" ThisKey="classNo" OtherKey="classNo" Type="SchoolClass" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolClass" Member="SchoolClass">
+    <Type Name="SchoolClass">
+      <Column Name="classNo" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="className" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="SchoolClass_Stud" Member="Stud" ThisKey="classNo" OtherKey="classNo" Type="Stud" />
     </Type>
   </Table>
 </Database>
