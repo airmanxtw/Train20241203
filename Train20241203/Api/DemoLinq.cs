@@ -70,7 +70,28 @@ namespace Train20241203.Api
 
             var db = new DataClasses1DataContext(conn);
 
+<<<<<<< HEAD
             var oddNums9 = from item in db.CounSubject select item;
+=======
+
+
+            var oddNums9 = from s in db.SchoolClass 
+                           where s.Stud.Any(n=>n.studNo=="S1234")
+                           select s;
+
+            var oddNums10 = from item in oddNums9 where item.classNo == "C001" select item;
+
+
+
+            var stud1 = from s in db.Stud where s.studNo == "S1234"
+                        select s;
+
+            stud1.First().studName = "John";
+
+           
+
+
+>>>>>>> 5ebd706 (更新查詢邏輯並新增篩選條件)
 
 
 
