@@ -65,9 +65,10 @@ namespace Train20241203.Api
             var oddNums8 = nums.Where(n => n > 1).GetOddNums(n=> n > 10);
 
             //get configuration connection string
-            
 
-            var db = new DataClasses1DataContext("");
+            var conn = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["TestDBConnectionString"].ConnectionString;
+
+            var db = new DataClasses1DataContext(conn);
 
             var oddNums9 = from item in db.CounSubject select item;
 
