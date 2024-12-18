@@ -70,9 +70,6 @@ namespace Train20241203.Api
 
             var db = new DataClasses1DataContext(conn);
 
-<<<<<<< HEAD
-            var oddNums9 = from item in db.CounSubject select item;
-=======
 
 
             var oddNums9 = from s in db.SchoolClass 
@@ -92,8 +89,6 @@ namespace Train20241203.Api
 
 
 
-
->>>>>>> 5ebd706 (更新查詢邏輯並新增篩選條件)
 
 
 
