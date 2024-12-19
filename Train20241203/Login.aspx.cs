@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -12,20 +13,29 @@ namespace Train20241203
 {
     public partial class Login : System.Web.UI.Page
     {
-        public IFun2 fun2 { get; set; }
+      
 
-
+        public ICrypt crypt { get; set; }
+        public IBBClass bbClass { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             //Api.DemoLinq demoLinq = new Api.DemoLinq();
             //demoLinq.Demo();
-            var name = fun2.GetLength();
+            var s= crypt.Encrypt("abc");  
+            var n = bbClass.Echo("abc");
 
+            var result = Enumerable.Range(1, 10)
+                         .Select(a => Enumerable.Range(1, 10).Select(b => Enumerable.Range(1, 10).Select(c => Tuple.Create(a, b, c))))
+                         .SelectMany(x => x)
+                         .SelectMany(x => x)
+                         .Where(t => Math.Pow(t.Item1, 2) + Math.Pow(t.Item2, 2) == Math.Pow(t.Item3, 2) && (t.Item1+t.Item2+t.Item3==24) );
 
-         
-
-
+            var reulst2 = from a in Enumerable.Range(1, 10)
+                          from b in Enumerable.Range(1, 10)
+                          from c in Enumerable.Range(1, 10)
+                          where Math.Pow(a, 2) + Math.Pow(b, 2) == Math.Pow(c, 2) && (a + b + c == 24)
+                          select Tuple.Create(a, b, c);
 
 
 

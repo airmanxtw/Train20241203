@@ -3,6 +3,7 @@ using Autofac.Integration.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
@@ -22,18 +23,38 @@ namespace Train20241203
             get { return _containerProvider; }
         }
 
+
         protected void Application_Start(object sender, EventArgs e)
         {
-            // Build up your application container and register your dependencies.
-            // var conn = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["TestDBConnectionString"].ConnectionString;
+
             var builder = new ContainerBuilder();
-            builder.RegisterType<Fun>().As<IFun>();
-            builder.RegisterType<Fun2>().As<IFun2>();
+            builder.RegisterType<CryptD>().As<ICrypt>();
+            builder.RegisterType<BBClass>().As<IBBClass>();
+            builder.Register(c => new DBClass("")).As<IDBClass>().SingleInstance();
+
             // ... continue registering dependencies...
 
             // Once you're done registering things, set the container
             // provider up with your registrations.
             _containerProvider = new ContainerProvider(builder.Build());
+
+
+
+
+
+
+
+
+            // Build up your application container and register your dependencies.
+            // var conn = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["TestDBConnectionString"].ConnectionString;
+            //var builder = new ContainerBuilder();
+            //builder.RegisterType<Fun>().As<IFun>();
+            //builder.RegisterType<Fun2>().As<IFun2>();
+            // ... continue registering dependencies...
+
+            // Once you're done registering things, set the container
+            // provider up with your registrations.
+            //_containerProvider = new ContainerProvider(builder.Build());
 
         }
     }

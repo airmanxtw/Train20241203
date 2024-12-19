@@ -5,11 +5,8 @@ using System.Web;
 
 namespace Train20241203.Api
 {
-    public class Fun : IFun
+    public interface IBBClass
     {
-        public string GetName()
-        {
-            return "airmanx";
-        }
+        int Echo(string str);
     }
 }

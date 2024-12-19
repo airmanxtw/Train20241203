@@ -5,8 +5,8 @@ using System.Web;
 
 namespace Train20241203.Api
 {
-    public interface IFun2
+    public interface IDBClass
     {
-        int GetLength();
+        int Echo();
     }
 }

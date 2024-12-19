@@ -146,12 +146,15 @@
     <Compile Include="Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Api\BBClass.cs" />
+    <Compile Include="Api\Crypt.cs" />
+    <Compile Include="Api\CryptD.cs" />
+    <Compile Include="Api\DBClass.cs" />
     <Compile Include="Api\DemoLinq.cs" />
     <Compile Include="Api\Extensions\MyExtesions.cs" />
-    <Compile Include="Api\Fun.cs" />
-    <Compile Include="Api\Fun2.cs" />
-    <Compile Include="Api\IFun.cs" />
-    <Compile Include="Api\IFun2.cs" />
+    <Compile Include="Api\IBBClass.cs" />
+    <Compile Include="Api\ICrypt.cs" />
+    <Compile Include="Api\IDBClass.cs" />
     <Compile Include="Api\PartialStud.cs" />
     <Compile Include="Api\Provider\MyMemberShipProvider.cs" />
     <Compile Include="Api\Provider\MyRoleProvider.cs" />

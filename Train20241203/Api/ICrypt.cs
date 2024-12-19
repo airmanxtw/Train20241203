@@ -5,8 +5,8 @@ using System.Web;
 
 namespace Train20241203.Api
 {
-    public interface IFun
+    public interface ICrypt
     {
-        string GetName();
+        string Encrypt(string str);
     }
 }
