@@ -146,6 +146,7 @@
     <Compile Include="Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Api\AdminMethods.cs" />
     <Compile Include="Api\BBClass.cs" />
     <Compile Include="Api\Crypt.cs" />
     <Compile Include="Api\CryptD.cs" />

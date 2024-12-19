@@ -1,14 +1,19 @@
-﻿using System;
+﻿using Autofac;
+using Autofac.Integration.Web;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Security;
+using System.Web.Services;
 using Train20241203.Api.Roles;
 
 namespace Train20241203.Api.Provider
 {
     public class MyRoleProvider : RoleProvider
-    {
+    {     
         public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
@@ -36,9 +41,15 @@ namespace Train20241203.Api.Provider
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string username)=>
-        new List<RoleBase>() { new RoleSUPERADMIN(username), new RoleAdmin(username) }
-        .Where(r => r.IsInRole()).Select(r => r.GetRole()).ToArray();
+        public override string[] GetRolesForUser(string username)
+        {
+
+            var roles= new List<RoleBase>() { new RoleSUPERADMIN(username), new RoleAdmin(username) }
+            .Where(r => r.IsInRole()).Select(r => r.GetRole()).ToArray();
+           
+            return roles;
+        }
+        
 
         
 

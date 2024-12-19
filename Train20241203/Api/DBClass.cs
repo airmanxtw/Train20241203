@@ -15,7 +15,7 @@ namespace Train20241203.Api
 
         public int Echo()
         {
-            throw new NotImplementedException();
+            return 10;
         }
     }
 }

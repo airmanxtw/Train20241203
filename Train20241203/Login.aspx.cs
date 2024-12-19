@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -17,6 +18,8 @@ namespace Train20241203
 
         public ICrypt crypt { get; set; }
         public IBBClass bbClass { get; set; }
+
+        public DBClass dbc { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,27 +40,38 @@ namespace Train20241203
                           where Math.Pow(a, 2) + Math.Pow(b, 2) == Math.Pow(c, 2) && (a + b + c == 24)
                           select Tuple.Create(a, b, c);
 
+            var result3 = dbc.Echo();
+
+            
+            
+          
 
 
-
-
-
-
-            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+                UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
 
-#pragma warning disable CS0618 // 類型或成員已經過時
+            #pragma warning disable CS0618 // 類型或成員已經過時
             e.Authenticated = Membership.ValidateUser(Login1.UserName, Login1.Password) ||
                               FormsAuthentication.Authenticate(Login1.UserName, Login1.Password);
+
+
+           
+
+            
 
 
 
             //var isSuper = FormsAuthentication.Authenticate(Login1.UserName, Login1.Password);
             //e.Authenticated = (Login1.UserName == "admin" && Login1.Password == "admin") || isSuper;
 
+        }
+
+        protected void Login1_LoggedIn(object sender, EventArgs e)
+        {
+            var s = User.Identity.Name;
         }
     }
 }

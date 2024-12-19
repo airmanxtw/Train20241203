@@ -23,14 +23,34 @@ namespace Train20241203
             get { return _containerProvider; }
         }
 
+        protected void Application_AuthorizeRequest(object sender, EventArgs e)
+        {
+            // Resolve the dependencies from the container and set them
+            // to the properties of the current HttpContext.
+            var context = new HttpContextWrapper(HttpContext.Current);
+
+          
+            //var builder = new ContainerBuilder();
+            //builder.RegisterType<Crypt>().As<ICrypt>();
+            //builder.RegisterType<BBClass>().As<IBBClass>();
+            //builder.Register(c => new DBClass(""));
+
+            //_containerProvider = new ContainerProvider(builder.Build());
+
+
+        }
 
         protected void Application_Start(object sender, EventArgs e)
         {
 
             var builder = new ContainerBuilder();
-            builder.RegisterType<CryptD>().As<ICrypt>();
+            builder.RegisterType<Crypt>().As<ICrypt>();            
             builder.RegisterType<BBClass>().As<IBBClass>();
-            builder.Register(c => new DBClass("")).As<IDBClass>().SingleInstance();
+
+            builder.Register(c => new DBClass(""));
+            builder.Register(c => new AdminMethods()).SingleInstance();
+
+
 
             // ... continue registering dependencies...
 

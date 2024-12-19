@@ -16,6 +16,8 @@ namespace Train20241203.Api.Roles
         public abstract bool IsInRole();
         public abstract string GetRole();
 
+      
+
 
     }
 }

@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
-        <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate" MembershipProvider="MyMemberShipProvider">
+        <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate" OnLoggedIn="Login1_LoggedIn" MembershipProvider="MyMemberShipProvider">
             <LayoutTemplate>
               
                 <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
