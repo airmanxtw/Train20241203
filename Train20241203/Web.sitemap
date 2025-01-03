@@ -2,6 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="*" title="*" roles="*"  description="root">
     <siteMapNode url="add.aspx" title="Add"  description="Add" roles="ADMIN,USER" />
+    <siteMapNode url="DemoStud.aspx" title="DemoStud"  description="DemoStud" roles="ADMIN,USER" />
     <siteMapNode url="sub.aspx" title="Sub"  description="Sub" roles="SUPERADMIN" />
     <siteMapNode url="JSDEMO.aspx" title="JSDEMO"  description="JSDEMO" roles="*" />
   </siteMapNode>
