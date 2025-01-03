@@ -2,12 +2,14 @@
 using Autofac.Integration.Web;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using Train20241203.Api;
+using Train20241203.DB;
 
 namespace Train20241203
 {
@@ -49,6 +51,8 @@ namespace Train20241203
 
             builder.Register(c => new DBClass(""));
             builder.Register(c => new AdminMethods()).SingleInstance();
+            
+            builder.Register(c => new DataClasses1DataContext()).SingleInstance();
 
 
 

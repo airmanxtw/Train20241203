@@ -159,6 +159,7 @@
     <Compile Include="Api\IBBClass.cs" />
     <Compile Include="Api\ICrypt.cs" />
     <Compile Include="Api\IDBClass.cs" />
+    <Compile Include="Api\PartialDataClasses1DataContext.cs" />
     <Compile Include="Api\PartialStud.cs" />
     <Compile Include="Api\Provider\MyMemberShipProvider.cs" />
     <Compile Include="Api\Provider\MyRoleProvider.cs" />

@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Train20241203.Api;
+using Train20241203.DB;
 using Train20241203.Models;
 
 namespace Train20241203
@@ -21,12 +22,17 @@ namespace Train20241203
 
         public DBClass dbc { get; set; }
 
+        public DataClasses1DataContext dc { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             //Api.DemoLinq demoLinq = new Api.DemoLinq();
             //demoLinq.Demo();
             var s= crypt.Encrypt("abc");  
             var n = bbClass.Echo("abc");
+
+           
 
             var result = Enumerable.Range(1, 10)
                          .Select(a => Enumerable.Range(1, 10).Select(b => Enumerable.Range(1, 10).Select(c => Tuple.Create(a, b, c))))

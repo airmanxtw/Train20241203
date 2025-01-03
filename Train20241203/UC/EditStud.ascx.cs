@@ -12,6 +12,7 @@ namespace Train20241203.UC
     {
         public delegate void InsertedHandler();
         public event InsertedHandler Inserted;
+        public DataClasses1DataContext dc { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
