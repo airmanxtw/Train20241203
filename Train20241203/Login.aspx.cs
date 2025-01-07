@@ -78,6 +78,17 @@ namespace Train20241203
         protected void Login1_LoggedIn(object sender, EventArgs e)
         {
             var s = User.Identity.Name;
+            int? i = 100;
+            var i2 = i?.ToString() ?? string.Empty;
+
+            if (string.IsNullOrEmpty(s?.Trim()))
+            {
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Label1.Text = DateTime.Now.ToString();
         }
     }
 }

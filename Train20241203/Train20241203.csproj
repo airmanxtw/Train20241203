@@ -273,6 +273,7 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
     <Content Include="MyValid.ashx" />
+    <Content Include="Note.md" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="README.md" />

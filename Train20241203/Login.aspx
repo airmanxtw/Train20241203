@@ -74,7 +74,8 @@
           <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
         </fieldset>  
     </div>--%>
-    
+
+   
    
     
 
@@ -82,6 +83,21 @@
      
     <script>
         $(document).ready(function () {
+            var timeId;
+            $("#Button1").attr("type", "button").click(function () {
+                if (!!timeId) {
+                    clearTimeout(timeId);
+                }
+                timeId = setTimeout(function () {
+                    __doPostBack("ctl00$ContentPlaceHolder1$Button1", "");
+                }, 2000);
+
+            })
+
+
+            
+
+
             //#testBtn
             var data = [{ id: 123, text: '顏大鈞' }, { id: 124, text: '顏小鈞' }, { id: 125, text: '王大頭' }]
 
@@ -111,4 +127,8 @@
            
         });      
     </script>
+    <div>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Button ID="Button1" runat="server" Text="Button" ClientIDMode="Static" OnClick="Button1_Click"  />
+    </div>
 </asp:Content>

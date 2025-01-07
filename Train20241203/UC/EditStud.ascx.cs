@@ -41,7 +41,7 @@ namespace Train20241203.UC
                 db.Stud.InsertOnSubmit(newStud);
                 try
                 {
-                    db.SubmitChanges();
+                    //db.SubmitChanges();
                     MsgLabel.Text = "新增成功";
                     Inserted?.Invoke();
 
