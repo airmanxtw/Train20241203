@@ -97,6 +97,9 @@
 
             //})
 
+            $("#Button1").DeBounceBtn();
+
+
             $("#Button1,#Button2").DeBounceBtn();
 
 

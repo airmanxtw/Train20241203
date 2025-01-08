@@ -25,8 +25,7 @@
                 else
                     eval(script);
                 
-                if (THIS.options.isValidate()) {
-                    debugger;
+                if (THIS.options.isValidate()) {                    
                     if (!!timeId) clearTimeout(timeId);
                     timeId = setTimeout(function () {
                         if (!!THIS.options.action)
