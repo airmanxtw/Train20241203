@@ -90,5 +90,10 @@ namespace Train20241203
         {
             Label1.Text = DateTime.Now.ToString();
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Label1.Text="hello:" + DateTime.Now.ToString();
+        }
     }
 }

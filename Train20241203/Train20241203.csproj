@@ -123,6 +123,7 @@
     <Content Include="App_Themes\JUI\jquery-ui.structure.min.css" />
     <Content Include="App_Themes\JUI\jquery-ui.theme.min.css" />
     <Content Include="CustomJs\cal.0.0.1.js" />
+    <Content Include="CustomJs\DeBounceBtn.0.0.1.js" />
     <Content Include="CustomJs\MyValid.0.0.1.js" />
     <Content Include="CustomJs\SelectItemDialog.0.0.1.js" />
     <Content Include="DemoStud.aspx" />

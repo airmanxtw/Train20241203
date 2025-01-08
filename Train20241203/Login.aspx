@@ -83,16 +83,21 @@
      
     <script>
         $(document).ready(function () {
-            var timeId;
-            $("#Button1").attr("type", "button").click(function () {
-                if (!!timeId) {
-                    clearTimeout(timeId);
-                }
-                timeId = setTimeout(function () {
-                    __doPostBack("ctl00$ContentPlaceHolder1$Button1", "");
-                }, 2000);
 
-            })
+            //eval("javascript:alert('hello')");
+
+            //var timeId;
+            //$("#Button1").attr("type", "button").click(function () {
+            //    if (!!timeId) {
+            //        clearTimeout(timeId);
+            //    }
+            //    timeId = setTimeout(function () {
+            //        __doPostBack("ctl00$ContentPlaceHolder1$Button1", "");
+            //    }, 2000);
+
+            //})
+
+            $("#Button1,#Button2").DeBounceBtn();
 
 
             
@@ -130,5 +135,6 @@
     <div>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="Button1" runat="server" Text="Button" ClientIDMode="Static" OnClick="Button1_Click"  />
+        <asp:Button ID="Button2" runat="server" ClientIDMode="Static" OnClick="Button2_Click" Text="Button2" />
     </div>
 </asp:Content>
