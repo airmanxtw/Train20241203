@@ -138,6 +138,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="Sub.aspx" />
     <Content Include="UC\EditStud.ascx" />
+    <Content Include="UC\ListStud.ascx" />
     <Content Include="UC\ucComputer.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="UC\EditStud.ascx.designer.cs">
       <DependentUpon>EditStud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ListStud.ascx.cs">
+      <DependentUpon>ListStud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\ListStud.ascx.designer.cs">
+      <DependentUpon>ListStud.ascx</DependentUpon>
     </Compile>
     <Compile Include="UC\ucComputer.ascx.cs">
       <DependentUpon>ucComputer.ascx</DependentUpon>

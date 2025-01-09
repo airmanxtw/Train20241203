@@ -53,7 +53,8 @@
             </LayoutTemplate>
         </asp:Login>       
     </p>
-     <div id="testdiv">hello</div>
+
+     <div class="animate__animated animate__flash animate__infinite" id="testdiv">hello</div>
 
 
      <button id="testBtn">選擇</button>

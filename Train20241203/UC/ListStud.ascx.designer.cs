@@ -7,29 +7,29 @@
 // </自動產生>
 //------------------------------------------------------------------------------
 
-namespace Train20241203
+namespace Train20241203.UC
 {
 
 
-    public partial class DemoStud
+    public partial class ListStud
     {
 
         /// <summary>
-        /// editStud1 控制項。
+        /// GridView1 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::Train20241203.UC.EditStud editStud1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// listStud1 控制項。
+        /// LinqDataSource1 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::Train20241203.UC.ListStud listStud1;
+        protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSource1;
     }
 }
