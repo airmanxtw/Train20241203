@@ -1,5 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ListStud.ascx.cs" Inherits="Train20241203.UC.ListStud" %>
-<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="studNo" DataSourceID="LinqDataSource1" GridLines="Horizontal" Width="100%">
+<asp:GridView ID="GridView1"  runat="server" 
+     AutoGenerateColumns ="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" 
+     BorderWidth="1px" CellPadding="3" DataKeyNames="studNo" DataSourceID="LinqDataSource1" GridLines="Horizontal" Width="100%" 
+     OnRowDataBound="GridView1_RowDataBound">
+
     <AlternatingRowStyle BackColor="#F7F7F7" />
     <Columns>
         <asp:BoundField DataField="ClassName" HeaderText="班級" ReadOnly="True" SortExpression="ClassName" />

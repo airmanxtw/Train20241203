@@ -87,7 +87,7 @@
         </tr>
         <tr>
             <td colspan="2" style="text-align:center">
-                <asp:Button ID="InsertButton" runat="server" Text="新增" OnClick="InsertButton_Click" ClientIDMode="Static" ValidationGroup="G1" />
+                <asp:Button  ID="InsertButton" CssClass="vibrate-1" runat="server" Text="新增" OnClick="InsertButton_Click" ClientIDMode="Static" ValidationGroup="G1" />
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ClientIDMode="Static" ValidationGroup="G1" DisplayMode="List" />
                 <div style="margin-top:3px">
                     <asp:Label ID="MsgLabel" runat="server" Text="" EnableViewState="False" ForeColor="#CC0000" Font-Bold="True"></asp:Label>

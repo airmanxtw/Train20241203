@@ -68,5 +68,19 @@ namespace Train20241203.UC
             return errors;
         }
 
+        string result = "";
+
+        public int GetScore() => 100;
+
+        public string GetResult(int score)=> score >= 60 ? "及格" : "不及格";
+
+        // 執行副作用
+        public void DoEffect()
+        {
+            result = GetResult(GetScore());
+        }
+
+
+
     }
 }
