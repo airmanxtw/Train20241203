@@ -137,6 +137,7 @@
     <Content Include="JSDEMO.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="Pages\DemoRegex.aspx" />
     <Content Include="Sub.aspx" />
     <Content Include="UC\EditStud.ascx" />
     <Content Include="UC\ListStud.ascx" />
@@ -213,6 +214,13 @@
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="MyValid.ashx.cs">
       <DependentUpon>MyValid.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DemoRegex.aspx.cs">
+      <DependentUpon>DemoRegex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DemoRegex.aspx.designer.cs">
+      <DependentUpon>DemoRegex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
