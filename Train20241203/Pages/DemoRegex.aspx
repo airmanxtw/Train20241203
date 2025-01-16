@@ -3,7 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     email:<asp:TextBox runat="server" ID="TextBox1"></asp:TextBox>
-    <asp:RegularExpressionValidator ID="Regu1" runat="server" ErrorMessage="請輸入正確的Email" ControlToValidate="TextBox1" ValidationExpression="^[^\s@]+@[^\s@]+\.[^\s@]+$"></asp:RegularExpressionValidator>
+    <asp:RegularExpressionValidator ID="Regu1" runat="server" 
+        ErrorMessage="請輸入正確的Email" 
+        ControlToValidate="TextBox1" 
+        ValidationExpression="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+    </asp:RegularExpressionValidator>
     <br />
     <asp:Button ID="Button1" runat="server" Text="Button" />
 </asp:Content>
