@@ -67,16 +67,17 @@
             this._refresh();
 
         },
-        _setOptions: function () {
+        _setOptions: function () {            
             this._superApply(arguments);
             this._refresh();
         },
-        _setOption: function (key, value) {
+        _setOption: function (key, value) {            
             this._super(key, value);
         },
         _refresh: function () {
-            var THAT = this;
+            var THAT = this;            
 
+            this.dialogDiv.dialog("option", { "title": this.options.title });
             this.table = $("<table>", {
                 attr: { id: "table20241213" },
                 css: { width: "100%" }
@@ -96,7 +97,6 @@
                     })
                 )
                 .appendTo(this.thead);
-
 
             this.tbody = $("<tbody>").appendTo(this.table);
 
@@ -125,7 +125,7 @@
                 });
 
             });
-
+            
             this.selectItemDiv.empty().append(this.table);
         },
         openDialog: function () {
@@ -148,7 +148,6 @@
                     $(event.target).parent().parent().removeClass("ui-state-active");
             }
             event.stopPropagation();
-
         },
         tbodyTrClickEvent: function (event) {
             $(event.target).parent().find("input").trigger("click");
@@ -162,11 +161,7 @@
             this._timeID20241211 = setTimeout(function () {
                 THAT.options.searchKeyCallBack(event.target.value);
             }, this.options.delay);
-        },
-        setItems: function (items) {
-            this.options.items = $.extend([], items);
-            this._refresh();
-        },
+        },        
         joinItem: function (conf) {
             var rs = "";
             $.each(conf.items, function (i, item) {

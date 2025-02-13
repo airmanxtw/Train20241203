@@ -123,10 +123,11 @@
     <Content Include="App_Themes\JUI\jquery-ui.min.css" />
     <Content Include="App_Themes\JUI\jquery-ui.structure.min.css" />
     <Content Include="App_Themes\JUI\jquery-ui.theme.min.css" />
+    <Content Include="CustomJs\AmountSendConfirm.0.0.1.js" />
     <Content Include="CustomJs\cal.0.0.1.js" />
     <Content Include="CustomJs\DeBounceBtn.0.0.1.js" />
     <Content Include="CustomJs\MyValid.0.0.1.js" />
-    <Content Include="CustomJs\SelectItemDialog.0.0.1.js" />
+    <Content Include="CustomJs\SelectItemDialog.0.0.3.js" />
     <Content Include="DemoStud.aspx" />
     <Content Include="Global.asax" />
     <Content Include="JavaScript\bootstrap.bundle.min.js" />

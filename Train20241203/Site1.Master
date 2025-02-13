@@ -26,10 +26,11 @@
                 <asp:ScriptReference Path="~/JavaScript/jquery-3.7.1.min.js" />
                 <asp:ScriptReference Path="~/JavaScript/bootstrap.min.js" />
                 <asp:ScriptReference Path="~/JavaScript/jquery-ui.min.js" />
-                <asp:ScriptReference Path="~/CustomJs/SelectItemDialog.0.0.1.js" />
+                <asp:ScriptReference Path="~/CustomJs/SelectItemDialog.0.0.3.js" />
                 <asp:ScriptReference Path="~/CustomJs/cal.0.0.1.js" />
                 <asp:ScriptReference Path="~/CustomJs/MyValid.0.0.1.js" />
                 <asp:ScriptReference Path="~/CustomJs/DeBounceBtn.0.0.1.js" />
+                <asp:ScriptReference Path="~/CustomJs/AmountSendConfirm.0.0.1.js" />
             </Scripts>
         </asp:ScriptManager>
         <div>

@@ -26,7 +26,10 @@ namespace Train20241203
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            
+            
+
+
             //Api.DemoLinq demoLinq = new Api.DemoLinq();
             //demoLinq.Demo();
             var s= crypt.Encrypt("abc");  
@@ -94,6 +97,16 @@ namespace Train20241203
         protected void Button2_Click(object sender, EventArgs e)
         {
             Label1.Text="hello:" + DateTime.Now.ToString();
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Label3.Text = DateTime.Now.ToString();  
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Label3.Text = DateTime.Now.ToString();
         }
     }
 }

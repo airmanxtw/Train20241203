@@ -104,7 +104,7 @@
             $("#Button1,#Button2").DeBounceBtn();
 
 
-            
+
 
 
             //#testBtn
@@ -113,26 +113,77 @@
             $("body").SelectItemDialog({
                 title: "大金系統",
                 headers: [{ key: 'id', title: '編號', width: '70px', align: 'center' }, { key: 'text', title: '名稱', align: 'left' }],
-                items: $.extend([],data),
+                items: $.extend([], data),
                 selectLimit: 2,
-                searchKeyCallBack: function (key) {                    
-                    $("body").SelectItemDialog("setItems", $.grep(data, function (d) {                        
+                searchKeyCallBack: function (key) {
+                    $("body").SelectItemDialog("setItems", $.grep(data, function (d) {
                         return d.text.indexOf(key) >= 0
-                    }));       
+                    }));
                 },
-                confirmCallBack: function (data) {                                        
-                    var t = $("body").SelectItemDialog("joinItem", { items: data, key: 'text', separator: "," });                    
+                confirmCallBack: function (data) {
+                    var t = $("body").SelectItemDialog("joinItem", { items: data, key: 'text', separator: "," });
                     $("body").SelectItemDialog("closeDialog");
                 },
-                closeCallBack:function(){
+                closeCallBack: function () {
                     $("body").SelectItemDialog("closeDialog");
                 }
             });
 
             $("#testBtn").click(function (event) {
+                //$("body").SelectItemDialog("option", "title", "hello");
+                $("body").SelectItemDialog("setItems", [{ id: 124, text: '顏X鈞' }, { id: 125, text: '顏D鈞' }, { id: 126, text: '王E頭' }])
                 $("body").SelectItemDialog("openDialog");
                 event.preventDefault();
             })
+
+            $("#amount").AmountSendConfirm()
+
+            $(".LB").click(function (e) {
+                e.preventDefault();
+                $("#amount").AmountSendConfirm("option", { script: $(this).attr("href") });   
+                $("#amount").AmountSendConfirm("openDialog");
+                
+            })
+
+            document
+                .getElementById("Button3Div")
+                .addEventListener("click", function (e) {   
+                    alert('button3div')
+                    event.preventDefault();
+                    $("#Button3").trigger("submit");
+                    //$("#amount").AmountSendConfirm("openDialog");
+                    //event.stopPropagation();                    
+                }, true)
+
+            //document
+            //    .getElementById("Button4Div")
+            //    .addEventListener("click", function (e) {
+            //        alert("button4div")
+            //        //event.stopPropagation();
+
+            //    }, false)
+
+            //$("#Button3Div").on("click", { capture: true }, function (event) {
+            //    debugger;
+            //    event.stopPropagation();
+
+            //    $("#amount").AmountSendConfirm("openDialog");
+            //})
+
+
+
+            //$("#sdiv").scrollTop(parseInt($("#TopHF").val()));
+
+            //$("#sdiv").scroll(function (event) {                
+            //    $("#TopHF").val($(this).scrollTop())
+            //})
+
+
+            //$("#scrollBtn").click(function () {
+            //    // get the scroll position
+            //    var scrollPosition = $("#sdiv").scrollTop();
+            //    $("#TopHF").val(scrollPosition);
+            //})
            
         });      
     </script>
@@ -140,5 +191,32 @@
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="Button1" runat="server" Text="Button" ClientIDMode="Static" OnClick="Button1_Click"  />
         <asp:Button ID="Button2" runat="server" ClientIDMode="Static" OnClick="Button2_Click" Text="Button2" />
+        <div id="Button3Div">
+               <asp:Button ID="Button3" runat="server" ClientIDMode="Static" Text="Button3" OnClick="Button3_Click" />       
+        </div>
+        <div id="Button4Div">
+            Button4Div
+        </div>
+        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="LB" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        
     </div>
-</asp:Content>
+    <div id="amount"></div>
+
+
+    <div runat="server" id="sdiv" style="height:100px;width:300px;overflow:scroll">
+        <p>
+            陳石輝表示，受到台積電法說會利多消息影響，台股今日開盤呈現上漲百點的格局。然而，由於農曆新年封關在即，市場籌碼出現一定程度的調節壓力，使指數波動幅度有所收斂。預計在接下來的幾個交易日內，台股將以23000點為中心上下震盪，成交量則維持在約3000億元的水準。
+
+陳石輝指出，昨日台積電法說會調高資本支出，相關供應鏈如弘塑（3131）、萬潤（6187）、辛耘（3583）也因此受惠，今日股價整齊反彈。然而，由於台股即將封關，外資與國內法人在高檔位置進行獲利了結，市場仍須警惕短線回檔風險。
+
+陳石輝表示，外資近來動態偏向低檔買進、高檔調節，同時期貨空單部位也在逐步減少，顯示對未來市場趨勢的看法逐漸樂觀。但由於假期間可能存在的國際變數，部分投資人選擇透過指數期貨空單避險，導致籌碼面仍有一定的不確定性。
+
+除了台積電，陳石輝進一步分析，AI伺服器及機器人產業是2025年開春後的市場焦點，輝達即將在3月舉行GTC頂尖人工智慧大會，預期將對AI伺服器與機器人應用有進一步闡述，屆時有望帶動相關個股表現。
+
+然而，他也提醒，投資人應避免在高檔追高。以近期表現強勢的矽光子相關個股為例，部分已經連漲數日，需謹慎操作，等待回檔後再行進場。相較之下，機器人股如和椿（6215）經過整理後的買點相對具吸引力。
+        </p>
+    </div>
+    <button id="scrollBtn">get</button>
+    <asp:HiddenField ID="TopHF" runat="server" ClientIDMode="Static" Value="0" />
+    </asp:Content>
