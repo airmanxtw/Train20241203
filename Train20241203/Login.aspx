@@ -136,14 +136,14 @@
                 event.preventDefault();
             })
 
-            $("#amount").AmountSendConfirm({
+            $("#amountDiv").AmountSendConfirm({
                 title: "提示訊息",                
                 confirmBtnText:"已詳讀事項並確定完成填表"
             })
             
             $(".LB").click(function (e) {                
                 e.preventDefault();
-                $("#amount").AmountSendConfirm("option", { script: $(this).attr("href"),title:"改變抬頭", message:"<h2>溫馨的提醒您</h2><div style='font-size:24px'>自113學年度第2學期起，撥款清冊及出差旅費報告單完成校內流程後，請至帳務請購系統進行代墊核銷之動支，並於<strong>撥款清冊上填寫核銷單號</strong>再送入會計室撥款。</div>" });   
+                $("#amount").AmountSendConfirm("option", { script: $(this).attr("href"), message:"<h2>溫馨的提醒您</h2><div style='font-size:24px'>自113學年度第2學期起，撥款清冊及出差旅費報告單完成校內流程後，請至帳務請購系統進行代墊核銷之動支，並於<strong>撥款清冊上填寫核銷單號</strong>再送入會計室撥款。</div>" });   
                 $("#amount").AmountSendConfirm("openDialog");
                 
             })
@@ -204,7 +204,7 @@
         <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
         
     </div>
-    <div id="amount">
+    <div id="amountDiv">
 
     </div>
 

@@ -138,6 +138,7 @@
     <Content Include="JSDEMO.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="Pages\DemoDialog.aspx" />
     <Content Include="Pages\DemoRegex.aspx" />
     <Content Include="Sub.aspx" />
     <Content Include="UC\EditStud.ascx" />
@@ -215,6 +216,13 @@
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="MyValid.ashx.cs">
       <DependentUpon>MyValid.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DemoDialog.aspx.cs">
+      <DependentUpon>DemoDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DemoDialog.aspx.designer.cs">
+      <DependentUpon>DemoDialog.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\DemoRegex.aspx.cs">
       <DependentUpon>DemoRegex.aspx</DependentUpon>
