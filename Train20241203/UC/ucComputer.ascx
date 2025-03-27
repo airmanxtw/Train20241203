@@ -1,4 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucComputer.ascx.cs" Inherits="Train20241203.UC.ucComputer" %>
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 <p>
     x:<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 </p>

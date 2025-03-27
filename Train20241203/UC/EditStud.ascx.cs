@@ -5,15 +5,20 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 using Train20241203.DB;
 
 namespace Train20241203.UC
 {
     public partial class EditStud : System.Web.UI.UserControl
     {
+      
+
+
         public delegate void InsertedHandler();
         public event InsertedHandler Inserted;
         public DataClasses1DataContext db { get; set; }
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {

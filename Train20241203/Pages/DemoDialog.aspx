@@ -3,7 +3,7 @@
     <style>
         dialog::backdrop {
             background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);            
         }
     </style>
 </asp:Content>

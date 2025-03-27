@@ -15,7 +15,8 @@ namespace Train20241203
 {
     public partial class Login : System.Web.UI.Page
     {
-      
+        
+        
 
         public ICrypt crypt { get; set; }
         public IBBClass bbClass { get; set; }
@@ -26,9 +27,7 @@ namespace Train20241203
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
-
+          
 
             //Api.DemoLinq demoLinq = new Api.DemoLinq();
             //demoLinq.Demo();
@@ -62,7 +61,9 @@ namespace Train20241203
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
 
-            #pragma warning disable CS0618 // 類型或成員已經過時
+            throw new Exception("驗證server發生錯誤");
+
+#pragma warning disable CS0618 // 類型或成員已經過時
             e.Authenticated = Membership.ValidateUser(Login1.UserName, Login1.Password) ||
                               FormsAuthentication.Authenticate(Login1.UserName, Login1.Password);
 

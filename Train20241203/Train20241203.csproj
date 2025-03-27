@@ -129,6 +129,7 @@
     <Content Include="CustomJs\MyValid.0.0.1.js" />
     <Content Include="CustomJs\SelectItemDialog.0.0.3.js" />
     <Content Include="DemoStud.aspx" />
+    <Content Include="ErrorHandler.aspx" />
     <Content Include="Global.asax" />
     <Content Include="JavaScript\bootstrap.bundle.min.js" />
     <Content Include="JavaScript\bootstrap.esm.min.js" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="DemoStud.aspx.designer.cs">
       <DependentUpon>DemoStud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandler.aspx.cs">
+      <DependentUpon>ErrorHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorHandler.aspx.designer.cs">
+      <DependentUpon>ErrorHandler.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -313,6 +321,7 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api\Interface\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
